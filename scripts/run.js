@@ -1,7 +1,7 @@
 const main = async () => {
   const domainContractFactory = await hre.ethers.getContractFactory('Domains');
   // We pass in "ninja" to the constructor when deploying
-  const domainContract = await domainContractFactory.deploy(".DrinksOnMe");
+  const domainContract = await domainContractFactory.deploy("TheTab");
   await domainContract.deployed();
 
   console.log("Contract deployed to:", domainContract.address);
