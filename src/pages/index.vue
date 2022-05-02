@@ -16,9 +16,9 @@
         <div class="w-1/2 h-64">
           <span>NFT</span>
         </div>
-        <div class="w-1/2 h-64">
+        <RouterLink to="/domains" class="w-1/2 h-64">
           <span>Domains</span>
-        </div>
+        </RouterLink>
       </section>
     </div>
   </section>
