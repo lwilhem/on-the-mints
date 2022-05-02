@@ -1,9 +1,5 @@
 <script setup lang="ts">
-import { useCryptoStore } from '../stores/crypto'
 
-const store = useCryptoStore()
-const { connectWallet } = useCryptoStore()
-const { account } = storeToRefs(store)
 </script>
 
 <template>
@@ -12,9 +8,6 @@ const { account } = storeToRefs(store)
       <h2 class="font-mono text-4xl">
         Welcome to The Tab! Please, take a seat. Someone will handle your inquiries soon.
       </h2>
-      <button v-if="!account" @click="connectWallet()">
-        Connect Your Wallet
-      </button>
     </div>
   </section>
 </template>

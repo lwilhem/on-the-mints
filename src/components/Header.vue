@@ -1,3 +1,16 @@
+<script setup lang="ts">
+import { useCryptoStore } from '../stores/crypto'
+
+const cryptoStore = useCryptoStore()
+const { connectWallet } = useCryptoStore()
+const { account } = storeToRefs(cryptoStore)
+
+onMounted(() => {
+  connectWallet()
+})
+
+</script>
+
 <template>
   <header class="flex items-center justify-between">
     <div class="flex items-center justify-center">
@@ -6,5 +19,10 @@
         On The Mints !
       </h1>
     </div>
+    <nav>
+      <button v-if="!account" @click="connectWallet">
+        Connect your wallet !
+      </button>
+    </nav>
   </header>
 </template>

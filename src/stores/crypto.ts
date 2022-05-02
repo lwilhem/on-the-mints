@@ -6,14 +6,14 @@ export const useCryptoStore = defineStore('user', () => {
       const { ethereum } = window
       if (!ethereum) {
         // eslint-disable-next-line no-console
-        console.log('Must connect to MetaMask!')
+        console.log('Make sure you have MetaMask!')
         return
       }
       const myAccounts = await ethereum.request({ method: 'eth_requestAccounts' })
 
-      // eslint-disable-next-line no-console
-      console.log('Connected: ', myAccounts[0])
       account.value = myAccounts[0]
+      // eslint-disable-next-line no-console
+      console.log('We have the ethereum object', account.value)
     }
     catch (error) {
       // eslint-disable-next-line no-console
