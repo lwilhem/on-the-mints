@@ -18,5 +18,5 @@ onMounted(() => {
 </script>
 
 <template>
-  <RouterView />
+  <RouterView class="border-4 border-red-500" />
 </template>

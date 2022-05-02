@@ -6,10 +6,6 @@ const cryptoStore = useCryptoStore()
 const { connectWallet } = useCryptoStore()
 const { account } = storeToRefs(cryptoStore)
 
-onMounted(() => {
-  connectWallet()
-})
-
 </script>
 
 <template>
