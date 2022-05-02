@@ -1,12 +1,20 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useCryptoStore } from '../stores/crypto'
+
+const store = useCryptoStore()
+const { connectWallet } = useCryptoStore()
+const { account } = storeToRefs(store)
+</script>
 
 <template>
-  <section>
-    <div class="flex items-center justify-center">
-      <div class="i-mdi:glass-cocktail w-8 h-8" />
-      <h1 class="font-sans uppercase text-2xl">
-        On The Mints !
-      </h1>
+  <section class="w-full h-96 text-left py-10 px-8">
+    <div class="w-1/2">
+      <h2 class="font-mono text-4xl">
+        Welcome to The Tab! Please, take a seat. Someone will handle your inquiries soon.
+      </h2>
+      <button v-if="!account" @click="connectWallet()">
+        Connect Your Wallet
+      </button>
     </div>
   </section>
 </template>
