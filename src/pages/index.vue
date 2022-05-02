@@ -7,6 +7,20 @@
     <h1 class="font-mono uppercase text-6xl">
       The Barkeeper's Tab
     </h1>
+    <span class="text-xl font-serif"> Hi there! have a sit, I'll get your order soon</span>
+    <div>
+      <h2 class="font-mono text-center my-4">
+        On The Menu :
+      </h2>
+      <section class="flex">
+        <div class="w-1/2 h-64">
+          <span>NFT</span>
+        </div>
+        <div class="w-1/2 h-64">
+          <span>Domains</span>
+        </div>
+      </section>
+    </div>
   </section>
 </template>
 
