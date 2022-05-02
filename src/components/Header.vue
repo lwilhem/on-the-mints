@@ -26,7 +26,7 @@ onMounted(() => {
       </button>
       <RouterLink v-show="account" to="/profile" class="flex items-center justify-center">
         <div class="i-heroicons-solid:user" />
-        Check Your Profile !
+        <span>Check Your Profile !</span>
       </RouterLink>
       <button class="i-carbon:sun dark:i-carbon:moon" @click="toggleDark()" />
     </nav>
