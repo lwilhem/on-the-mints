@@ -3,8 +3,8 @@ import {
   presetAttributify,
   presetIcons,
   presetTypography,
-  presetUno,
   presetWebFonts,
+  presetWind,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
@@ -15,14 +15,21 @@ export default defineConfig({
     ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
   ],
   presets: [
-    presetUno(),
+    presetWind(),
     presetAttributify(),
     presetIcons({
       extraProperties: {
-        display: 'inline-block',
+        'display': 'inline-block',
+        'vertical-align': 'middle',
       },
       scale: 1.2,
       warn: true,
+      collections: {
+        mdi: () => import('@iconify-json/mdi/icons.json').then(i => i.default as any),
+        fluent: () => import('@iconify-json/fluent/icons.json').then(i => i.default as any),
+        heroicons: () => import('@iconify-json/heroicons-solid/icons.json').then(i => i.default as any),
+        carbon: () => import('@iconify-json/carbon/icons.json').then(i => i.default as any),
+      },
     }),
     presetTypography(),
     presetWebFonts({
