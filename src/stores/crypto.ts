@@ -11,9 +11,15 @@ export const useCryptoStore = defineStore('user', () => {
       }
       const myAccounts = await ethereum.request({ method: 'eth_requestAccounts' })
 
-      account.value = myAccounts[0]
-      // eslint-disable-next-line no-console
-      console.log('We have the ethereum object', account.value)
+      if (myAccounts.length !== 0) {
+        account.value = myAccounts[0]
+        // eslint-disable-next-line no-console
+        console.log('Found an authorized account:', account)
+      }
+      else {
+        // eslint-disable-next-line no-console
+        console.log('No authorized account found')
+      }
     }
     catch (error) {
       // eslint-disable-next-line no-console
