@@ -4,11 +4,7 @@
 
 <template>
   <section class="w-full h-96 text-left py-10 px-8">
-    <div class="w-1/2">
-      <h2 class="font-mono text-4xl">
-        Welcome to The Tab! Please, take a seat. Someone will handle your inquiries soon.
-      </h2>
-    </div>
+    <h1>Index.vue</h1>
   </section>
 </template>
 

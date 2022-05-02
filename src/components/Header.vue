@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useCryptoStore } from '../stores/crypto'
+import { toggleDark } from '../composables'
 
 const cryptoStore = useCryptoStore()
 const { connectWallet } = useCryptoStore()
@@ -19,10 +20,15 @@ onMounted(() => {
         On The Mints !
       </h1>
     </div>
-    <nav>
+    <nav class="flex items-center justify-evenly">
       <button v-if="!account" @click="connectWallet">
         Connect your wallet !
       </button>
+      <RouterLink v-show="account" to="/profile" class="flex items-center justify-center">
+        <div class="i-heroicons-solid:user" />
+        Check Your Profile !
+      </RouterLink>
+      <button class="i-carbon:sun dark:i-carbon:moon" @click="toggleDark()" />
     </nav>
   </header>
 </template>

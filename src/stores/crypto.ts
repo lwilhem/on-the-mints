@@ -20,7 +20,13 @@ export const useCryptoStore = defineStore('user', () => {
       console.log(error)
     }
   }
+
+  async function disconnectWallet() {
+    return account.value = null
+  }
+
   return {
+    disconnectWallet,
     account,
     connectWallet,
   }
